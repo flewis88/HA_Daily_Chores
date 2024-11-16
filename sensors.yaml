@@ -1,0 +1,24 @@
+- platform: template
+  sensors:
+    weekday_morning:
+      friendly_name: "Weekday Morning"
+      value_template: >
+        {% set current_time = now().time() %}
+        {% set day_of_week = now().weekday() %}
+        {% if day_of_week >= 0 and day_of_week <= 4 and current_time < strptime('09:00', '%H:%M').time() %}
+          true
+        {% else %}
+          false
+        {% endif %}
+- platform: template
+  sensors:
+    weekend_morning:
+      friendly_name: "Weekend Morning"
+      value_template: >
+        {% set current_time = now().time() %}
+        {% set day_of_week = now().weekday() %}
+        {% if day_of_week >= 5 and day_of_week <= 6 and current_time < strptime('10:00', '%H:%M').time() %}
+          true
+        {% else %}
+          false
+        {% endif %}
