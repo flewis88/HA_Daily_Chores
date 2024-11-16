@@ -1,0 +1,86 @@
+- id: "9999999999999"
+  alias: Chore Reset at 1am
+  trigger:
+    - platform: time
+      at: 01:00:00
+  action:
+    - service: input_boolean.turn_off
+      target:
+        entity_id:
+          - input_boolean.chore_kid1_breakfast
+          - input_boolean.chore_kid1_dressed
+          - input_boolean.chore_kid1_reader
+          - input_boolean.chore_kid1_tablet
+          - input_boolean.chore_kid1_teeth
+          - input_boolean.chore_kid1_toilet
+          - input_boolean.chore_kid1_water
+          - input_boolean.chore_kid1_bag
+          - input_boolean.chore_kid2_breakfast
+          - input_boolean.chore_kid2_dressed
+          - input_boolean.chore_kid2_reader
+          - input_boolean.chore_kid2_tablet
+          - input_boolean.chore_kid2_teeth
+          - input_boolean.chore_kid2_toilet
+          - input_boolean.chore_kid2_water
+          - input_boolean.chore_kid2_bag
+  mode: single
+- id: "88888888888888"
+  alias: kid2 add Star once Chores Completed
+  trigger:
+    - platform: state
+      entity_id: input_boolean.chore_kid2_breakfast
+      to: "on"
+    - platform: state
+      entity_id: input_boolean.chore_kid2_dressed
+      to: "on"
+    - platform: state
+      entity_id: input_boolean.chore_kid2_reader
+      to: "on"
+    - platform: state
+      entity_id: input_boolean.chore_kid2_tablet
+      to: "on"
+    - platform: state
+      entity_id: input_boolean.chore_kid2_teeth
+      to: "on"
+    - platform: state
+      entity_id: input_boolean.chore_kid2_toilet
+      to: "on"
+    - platform: state
+      entity_id: input_boolean.chore_kid2_water
+      to: "on"
+    - platform: state
+      entity_id: input_boolean.chore_kid2_bag
+      to: "on"
+  action:
+    - service: script.chores_kid2_increase_stars
+  mode: single
+- id: "777777777777"
+  alias: kid1 add Star once Chores Completed
+  trigger:
+    - platform: state
+      entity_id: input_boolean.chore_kid1_breakfast
+      to: "on"
+    - platform: state
+      entity_id: input_boolean.chore_kid1_dressed
+      to: "on"
+    - platform: state
+      entity_id: input_boolean.chore_kid1_reader
+      to: "on"
+    - platform: state
+      entity_id: input_boolean.chore_kid1_tablet
+      to: "on"
+    - platform: state
+      entity_id: input_boolean.chore_kid1_teeth
+      to: "on"
+    - platform: state
+      entity_id: input_boolean.chore_kid1_toilet
+      to: "on"
+    - platform: state
+      entity_id: input_boolean.chore_kid1_water
+      to: "on"
+    - platform: state
+      entity_id: input_boolean.chore_kid1_bag
+      to: "on"
+  action:
+    - service: script.chores_kid1_increase_stars
+  mode: single
