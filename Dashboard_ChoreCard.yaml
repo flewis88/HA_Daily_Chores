@@ -1,0 +1,56 @@
+square: false
+type: grid
+cards:
+  - type: conditional
+    conditions:
+      - condition: state
+        entity: sensor.weekday_morning
+        state: "true"
+    card:
+      type: horizontal-stack
+      cards:
+        - type: vertical-stack
+          cards:
+            - type: picture
+              image: /local/boy.png
+            - type: gauge
+              name: Stars
+              min: 0
+              max: 300
+              entity: counter.chore_star_counter_kid1
+            - type: horizontal-stack
+              cards:
+                - type: vertical-stack
+                  cards:
+                    - type: button
+                      entity: input_boolean.chore_kid1_breakfast
+                      name: Breaky
+                      icon: mdi:food-fork-drink
+                    - type: button
+                      entity: input_boolean.chore_kid1_dressed
+                      name: Dressed
+                      icon: mdi:tshirt-crew
+                    - type: button
+                      entity: input_boolean.chore_kid1_toilet
+                      name: Toilet
+                      icon: mdi:toilet
+                    - type: button
+                      entity: input_boolean.chore_kid1_teeth
+                      name: Teeth
+                      icon: mdi:toothbrush-paste
+                - type: vertical-stack
+                  cards:
+                    - type: button
+                      entity: input_boolean.chore_kid1_tablet
+                      name: Tablet
+                      icon: mdi:medication-outline
+                    - type: button
+                      entity: input_boolean.chore_kid1_reader
+                      name: Reader
+                    - type: button
+                      entity: input_boolean.chore_kid1_water
+                      name: Bottle
+                      icon: mdi:cup-water
+                    - type: button
+                      entity: input_boolean.chore_kid1_bag
+                      name: Bag
