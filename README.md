@@ -4,6 +4,7 @@ Daily chores for the kids, resets daily and shows a total on the graph.
 1. Copy YAML from  automations.yaml, scripts.yaml & sensors.yaml into your respective files
 2. Go to Settings -> Devices & Serivces -> Helpers
 3. Create toggle helpers for each chore and select the appropriate icon:
+   
    a. chore_kid1_breakfast
    
    b. chore_kid1_dressed
