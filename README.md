@@ -44,4 +44,7 @@ Daily chores for the kids, resets daily and shows a total on the graph.
    b. chore_star_counter_kid2
 8. Create a "Manual" card on your Dashboard, and copy in the YAML from Dashboard_ChoreCard.yaml
 
+
+It may be possible to create the helpers in YAML but I found they're documented in a file that HA doesn't like you meddling with, so I just created them thru the Web interface. I also have it on a conditional card, so the chores disappear after 9am on weekdays and have a reduced list of chores that show on weekends, and disappear after 10am.
+
 ![Chores](https://github.com/user-attachments/assets/d0e79324-f5a1-4835-b52d-5ead8454d445)
