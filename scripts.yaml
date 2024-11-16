@@ -1,0 +1,35 @@
+chores_kid2_increase_stars:
+  alias: Chores kid2 Increase Stars
+  sequence:
+    - service: counter.increment
+      target:
+        entity_id: counter.chore_star_counter_kid2
+      data: {}
+  mode: single
+  icon: mdi:plus-circle-outline
+chores_kid1_increase_stars:
+  alias: Chores kid1 Increase Stars
+  sequence:
+    - service: counter.increment
+      metadata: {}
+      data: {}
+      target:
+        entity_id: counter.chore_star_counter_kid1
+  mode: single
+  icon: mdi:plus-circle-outline
+chores_kid1_decrease_stars:
+  alias: Chores kid1 Decrease Stars
+  sequence:
+    - service: counter.decrement
+      target:
+        entity_id: counter.chore_star_counter_kid1
+  mode: single
+  icon: mdi:minus-circle-outline
+chores_kid2_decrease_stars:
+  alias: Chores kid2 Decrease Stars
+  sequence:
+    - service: counter.decrement
+      target:
+        entity_id: counter.chore_star_counter_kid2
+  mode: single
+  icon: mdi:minus-circle-outline
